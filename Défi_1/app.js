@@ -1,6 +1,3 @@
-var button = document.getElementById('button');
-var output = document.getElementById('output');
-
 button.onclick = function loadDate() {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
