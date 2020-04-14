@@ -1,17 +1,12 @@
-button.onclick = function loadDate() {
+button.onclick = function loadData () {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-        if (xhttp.readyState == 4) {
-            if(xhttp.status == 200) {
-                document.getElementById('output').textContent = xhttp.responseText;
-                // console.log(xhttp.responseText);
-            }
-            if (xhttp.status == 404){
-                console.log('File not found');
-            }
-        } 
-    };
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            document.getElementById('output').innerHTML = xhttp.responseText;
+        } if (xhttp.status == 404){
+            console.warn('file not found');
+        }
+    }
     xhttp.open('get', 'data.txt', true);
     xhttp.send();
-    // console.log(xhttp.readyState)
-};
+}
